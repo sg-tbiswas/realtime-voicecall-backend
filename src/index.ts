@@ -9,7 +9,7 @@ const app = express();
 // Set up CORS middleware for Express
 app.use(
   cors({
-    origin: "http://localhost:3000", // Update this to the origin of your client
+    origin: "https://realtime-voicecall.vercel.app", // Update this to the origin of your client
     methods: ["GET", "POST"],
     credentials: true, // Allow credentials (e.g., cookies) if needed
   })
@@ -22,7 +22,7 @@ const httpServer: HTTPServer = createServer(app);
 const io = new SocketIOServer(httpServer, {
   path: "/socket", // Define the WebSocket path
   cors: {
-    origin: "http://localhost:3000", // Update this to the origin of your client
+    origin: "https://realtime-voicecall.vercel.app", // Update this to the origin of your client
     methods: ["GET", "POST"],
     credentials: true, // Allow credentials (e.g., cookies) if needed
   },
